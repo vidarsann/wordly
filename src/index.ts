@@ -51,12 +51,14 @@ const removePreviousLetter = () => {
 
 const verifyAnswer = () => {
     if (currentLetter === wordRowsArray[currentRow].length) {
+        for(let i = 0; i < word.length; i++) {
+            if(word[i] === wordRowsArray[currentRow][i].innerHTML) {
+                wordRowsArray[currentRow][i].style.backgroundColor = "green"
+            }
+        }
+
         currentRow++
         currentLetter = 0
-    }
-
-    for(let i = 0; i < word.length; i++) {
-        if(word[i] === wordRowsArray[currentRow - 1][i].innerHTML) console.log("hello")
     }
 }
 

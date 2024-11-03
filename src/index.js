@@ -41,12 +41,13 @@ var removePreviousLetter = function () {
 };
 var verifyAnswer = function () {
     if (currentLetter === wordRowsArray[currentRow].length) {
+        for (var i = 0; i < word.length; i++) {
+            if (word[i] === wordRowsArray[currentRow][i].innerHTML) {
+                wordRowsArray[currentRow][i].style.backgroundColor = "green";
+            }
+        }
         currentRow++;
         currentLetter = 0;
-    }
-    for (var i = 0; i < word.length; i++) {
-        if (word[i] === wordRowsArray[currentRow - 1][i].innerHTML)
-            console.log("hello");
     }
 };
 document.addEventListener("keydown", function (_a) {
